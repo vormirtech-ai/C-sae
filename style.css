@@ -1,0 +1,70 @@
+/* Custom Styles & Aesthetics */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    cursor: auto;
+}
+
+/* Custom Cursor */
+@media (min-width: 768px) {
+    body {
+        cursor: none; 
+    }
+    
+    a, button, select, input, textarea {
+        cursor: none;
+    }
+}
+
+.custom-cursor {
+    width: 14px;
+    height: 14px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+    background-color: black;
+}
+
+.custom-cursor.active {
+    width: 65px;
+    height: 65px;
+    background-color: black;
+    border-color: transparent;
+}
+
+.custom-cursor.active #cursor-text {
+    opacity: 1;
+}
+
+/* Text Reveal Animation */
+.text-reveal-wrapper {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.text-reveal {
+    display: inline-block;
+    transform: translateY(110%);
+    opacity: 0;
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.8s ease;
+}
+
+.reveal-trigger.active .text-reveal {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Fade Up Animation */
+.reveal-fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-fade.active {
+    opacity: 1;
+    transform: translateY(0);
+}
